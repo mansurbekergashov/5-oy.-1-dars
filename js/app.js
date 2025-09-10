@@ -34,7 +34,7 @@ function ui(cars) {
         elTitle.innerText = element.name;
         elDescription.innerText = element.description;
         elCategory.innerText = element.category;
-        elPrice.innerText = element.price;
+        elPrice.innerText = `Narxi: $${element.price}`;
         elBrand.innerText = element.brand;
 
         elContainer.append(clone);
