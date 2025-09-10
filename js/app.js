@@ -1,7 +1,6 @@
 const elCardTemplate = document.getElementById("cardTemp");
 const elContainer = document.getElementById("container");
 const elLoading = document.getElementById("loading");
-// const elError = document.getElementById("error");
 
 
 
@@ -15,7 +14,6 @@ fetch("https://json-api.uz/api/project/fn43/cars")
     })
     .catch(() => {
         console.log("Xatolik");
-        // elError.classList.remove("hidden");
     })
     .finally(() => {
         elLoading.remove()
