@@ -14,7 +14,8 @@
 
   <body>
     <div id="loading">
-      <div class="flex gap-x-16 justify-around mb-6 mt-4">
+      
+      <div class="flex gap-x-16 justify-around mb-4 mt-4">
         <div class="flex w-70 h-70 flex-col gap-4">
           <div class="skeleton h-32 w-full"></div>
           <div class="skeleton h-4 w-28"></div>
@@ -41,7 +42,7 @@
         </div>
       </div>
 
-      <div class="flex gap-x-16 justify-around mb-6">
+      <div class="flex gap-x-16 justify-around mb-4">
         <div class="flex w-70 h-70 flex-col gap-4">
           <div class="skeleton h-32 w-full"></div>
           <div class="skeleton h-4 w-28"></div>
@@ -68,7 +69,7 @@
         </div>
       </div>
 
-      <div class="flex gap-x-16 justify-around mb-6">
+      <div class="flex gap-x-16 justify-around mb-4">
         <div class="flex w-70 h-70 flex-col gap-4">
           <div class="skeleton h-32 w-full"></div>
           <div class="skeleton h-4 w-28"></div>
@@ -95,6 +96,8 @@
         </div>
       </div>
     </div>
+
+    <h1 id="error" class="hidden font-bold text-[30px] text-center">Xatolik yuz berdi</h1>
 
     <div id="container" class="grid grid-cols-4 grid-rows-5 gap-4" >
     </div>
@@ -105,7 +108,8 @@
         <h3 class="text-[blue] text-[14px] pb-2"></h3>
         <p class="pb-2"></p>
         <mark></mark><br>
-        <i class="font-medium pt-2"></i>
+        <i class="font-medium pt-2"></i><br>
+        <button class="delete-btn border-[2px] border-[red] rounded-[8px] w-[60px] h-[30px] mt-2 cursor-pointer">Delete</button>
       </div>
     </template>
 
