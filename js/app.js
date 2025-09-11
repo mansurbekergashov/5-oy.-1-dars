@@ -23,7 +23,7 @@ function init() {
         })
 }
 
-init()
+init();
 
 
 function deleteEl(id) {
@@ -40,7 +40,11 @@ function deleteEl(id) {
         })
 }
 
+// function openEl(id) {
+//     elLoading.style.display = "block";
+//     window.open(`https://json-api.uz/api/project/fn43/cars/${id}`, "_blank");
 
+// }
 
 
 
@@ -54,6 +58,7 @@ function ui(cars) {
         const elCategory = clone.querySelector("mark");
         const elPrice = clone.querySelector("i");
         const elDeleteBtn = clone.querySelector(".delete-btn");
+        // const elOpenBtn = clone.querySelector(".open-btn");
 
         elTitle.innerText = element.name;
         elDescription.innerText = element.description;
@@ -61,6 +66,7 @@ function ui(cars) {
         elPrice.innerText = `Narxi: $${element.price}`;
         elBrand.innerText = element.brand;
         elDeleteBtn.id = element.id;
+        // elOpenBtn.id = element.id;
 
         elContainer.append(clone);
     });
@@ -75,3 +81,9 @@ document.addEventListener("click", (evt) => {
     }
 });
 
+// document.addEventListener("click", (evt) => {
+//     if (evt.target.classList.contains("open-btn")) {
+//         const id = evt.target.id;
+//         openEl(id)
+//     }
+// });
