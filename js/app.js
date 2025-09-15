@@ -160,6 +160,8 @@ document.addEventListener("click", (evt) => {
     }
 
     if (evt.target.classList.contains("edit-btn")) {
+        elForm.classList.remove("hidden");
+        elUp.classList.remove("hidden");
         getById(evt.target.id);
         editID = evt.target.id;
         elAddBtn.style.display = "none";
@@ -198,12 +200,14 @@ elForm.addEventListener("submit", (evt) => {
 
 // PAGINATION
 elNext.addEventListener("click", () => {
+    elContainer.innerHTML = "";
     skip += limit;
     init();
 
 });
 
 elNext.addEventListener("click", () => {
+    elContainer.innerHTML = "";
     if (skip > 0) {
         skip -= limit;
         init();
