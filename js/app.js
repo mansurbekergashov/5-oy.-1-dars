@@ -9,6 +9,8 @@ const elPrev = document.getElementById("prev");
 const elNext = document.getElementById("next");
 const elAddNewCar = document.getElementById("addNewCar");
 const elUp = document.getElementById("up");
+const elAddUp = document.getElementById("addUp");
+const elPrevNext = document.getElementById("prevNext");
 
 
 const limit = 20;
@@ -30,6 +32,9 @@ function init() {
         })
         .catch(() => {
             elError.classList.remove("hidden");
+            elAddUp.classList.add("hidden");
+            elPrevNext.classList.add("hidden");
+
         })
         .finally(() => {
             elLoading.style.display = "none";
@@ -206,9 +211,10 @@ elNext.addEventListener("click", () => {
 
 });
 
-elNext.addEventListener("click", () => {
+elPrev.addEventListener("click", () => {
     elContainer.innerHTML = "";
-    if (skip > 0) {
+    
+    if (skip > limit) {
         skip -= limit;
         init();
     }
@@ -220,9 +226,10 @@ elNext.addEventListener("click", () => {
 // ADD NEW CAR
 
 elAddNewCar.addEventListener("click", ()=>{
-    elForm.classList.remove("hidden");
-    elUp.classList.remove("hidden");
-});
+        elForm.classList.remove("hidden");
+        elUp.classList.remove("hidden");
+})
+    
 
 elUp.addEventListener("click",()=>{
     elForm.classList.add("hidden")
