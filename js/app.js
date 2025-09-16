@@ -17,6 +17,9 @@ const limit = 20;
 let skip = 5;
 
 
+let token = localStorage.getItem("token");
+
+
 let editID = null;
 
 
@@ -44,18 +47,29 @@ function init() {
 
 // DELETE
 function deleteEl(id) {
-    elContainer.innerHTML = null;
-    elLoading.style.display = "block";
-    fetch(`https://json-api.uz/api/project/fn43/cars/${id}`, { method: "DELETE", })
-        .then((res) => {
-            init();
+    if (token) {
+        elContainer.innerHTML = null;
+        elLoading.style.display = "block";
+        fetch(`https://json-api.uz/api/project/fn43/cars/${id}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         })
-        .then((res) => {
-        })
-        .catch(() => {
-        })
-        .finally(() => {
-        })
+            .then((res) => {
+                init();
+            })
+            .then((res) => {
+            })
+            .catch(() => {
+            })
+            .finally(() => {
+            })
+    }
+    else {
+        alert("Ro'yxatdan o'ting");
+        location.href = "pages/login.html"
+    }
 }
 
 
@@ -213,7 +227,7 @@ elNext.addEventListener("click", () => {
 
 elPrev.addEventListener("click", () => {
     elContainer.innerHTML = "";
-    
+
     if (skip > limit) {
         skip -= limit;
         init();
@@ -225,13 +239,15 @@ elPrev.addEventListener("click", () => {
 
 // ADD NEW CAR
 
-elAddNewCar.addEventListener("click", ()=>{
-        elForm.classList.remove("hidden");
-        elUp.classList.remove("hidden");
+elAddNewCar.addEventListener("click", () => {
+    elForm.classList.remove("hidden");
+    elUp.classList.remove("hidden");
+    elAddNewCar.classList.add("hidden");
 })
-    
 
-elUp.addEventListener("click",()=>{
+
+elUp.addEventListener("click", () => {
     elForm.classList.add("hidden")
-    elUp.classList.add("hidden")
+    elUp.classList.add("hidden");
+    elAddNewCar.classList.remove("hidden");
 })
