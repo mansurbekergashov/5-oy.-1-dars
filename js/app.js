@@ -180,6 +180,7 @@ document.addEventListener("click", (evt) => {
 
     if (evt.target.classList.contains("edit-btn")) {
         elForm.classList.remove("hidden");
+        elAddNewCar.classList.add("hidden")
         elUp.classList.remove("hidden");
         getById(evt.target.id);
         editID = evt.target.id;
@@ -207,8 +208,6 @@ elForm.addEventListener("submit", (evt) => {
             result.id = editID;
             editEl(result);
             editID = null;
-            elForm.classList.remove("hidden");
-            elUp.classList.remove("hidden");
         }
     }
 
@@ -251,3 +250,4 @@ elUp.addEventListener("click", () => {
     elUp.classList.add("hidden");
     elAddNewCar.classList.remove("hidden");
 })
+

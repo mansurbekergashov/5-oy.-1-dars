@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   
   <body>
 
-    <form id="form">
-      <input type="text" placeholder="Login kiriting" name = "username"/>
-      <input type="password" placeholder="Parol kiriting" name = "password"/>
-      <button>Tasdiqlash</button>
-    </form>
+
+      <form id="form" class="text-center mt-40">
+        <input type="text" class="rounded-xl w-84 h-10 mt-6 pl-4" placeholder="Login kiriting" name = "username"/> <br>
+        <input type="password" class="rounded-xl w-84 h-10 mt-6 pl-4"  placeholder="Parol kiriting" name = "password"/> <br>
+        <button class="mt-6 border-2 border-transparent text-[white] w-30 h-8 rounded-[8px] bg-[#9803fc] hover:transform-[scale(1.1)] duration-300 ease-in-out active:opacity-50 active:duration-0">Tasdiqlash</button>
+      </form>
 
 
-    <div id="messageBox" style="position: absolute; bottom: 0; right: 0;"></div>
+    <div id="messageBox" style="position: absolute; bottom: 15px; right: 40px;" class="md:text-10"></div>
     <script src="../js/login.js"></script>
   </body>
 
